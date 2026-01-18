@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>Sesi | Auth Console</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="app-body">
+  <div class="app-shell">
+    <header class="top-nav" aria-label="Navigasi utama">
+      <div class="top-nav-inner">
+        <div class="top-nav-brand">
+          <div class="top-nav-mark" aria-hidden="true"></div>
+          <div>
+            <div class="top-nav-name">Northwind Identity</div>
+            <div class="top-nav-section-label">Konsol autentikasi</div>
+          </div>
+        </div>
+
+        <nav class="top-nav-links" aria-label="Halaman">
+          <a href="dashboard.html" class="top-nav-link">Dasbor</a>
+          <a href="sessions.html" class="top-nav-link top-nav-link-active">Sesi</a>
+          <a href="security-settings.html" class="top-nav-link">Keamanan</a>
+        </nav>
+
+        <div class="top-nav-user">
+          <div class="avatar">
+            <span>JF</span>
+          </div>
+          <span class="avatar-badge" aria-hidden="true"></span>
+          <div class="top-nav-user-meta">
+            <div class="top-nav-user-name">Jordan Fisher</div>
+            <div class="top-nav-user-role">Admin · Akun contoh</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-shell-main">
+      <header class="section-header">
+        <div>
+          <h1 class="section-title">Sesi</h1>
+          <p class="section-subtitle">
+            Daftar yang jelas untuk semua lokasi login akun contoh ini.
+          </p>
+        </div>
+        <div class="section-meta">
+          Perubahan di sini tidak disimpan. Gunakan halaman ini untuk mendemonstrasikan pengalaman pengguna.
+        </div>
+      </header>
+
+      <section class="card" aria-label="Kontrol sesi">
+        <div class="sessions-meta">
+          <span>Login di 4 perangkat · 1 sesi saat ini disorot.</span>
+          <div class="sessions-legend">
+            <span class="sessions-legend-item">
+              <span class="legend-dot legend-dot-primary"></span>
+              <span>Perangkat saat ini</span>
+            </span>
+            <span class="sessions-legend-item">
+              <span class="legend-dot legend-dot-muted"></span>
+              <span>Aktif</span>
+            </span>
+            <span class="sessions-legend-item">
+              <span class="legend-dot legend-dot-danger"></span>
+              <span>Berakhir</span>
+            </span>
+          </div>
+        </div>
+        <div class="card-body table-scroll">
+          <table class="table" aria-label="Daftar sesi">
+            <thead>
+              <tr>
+                <th scope="col">Perangkat</th>
+                <th scope="col">Lokasi</th>
+                <th scope="col">Terakhir aktif</th>
+                <th scope="col">Metode login</th>
+                <th scope="col">Status</th>
+                <th scope="col" class="text-right">Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  MacOS · Safari
+                  <div class="table-row-subtext">Browser ini</div>
+                </td>
+                <td>
+                  London, United Kingdom
+                  <div class="table-row-subtext">Perkiraan lokasi</div>
+                </td>
+                <td>Sekarang</td>
+                <td>
+                  <span class="table-tag table-tag-strong">MFA · App</span>
+                </td>
+                <td>
+                  <span class="table-tag table-tag-strong">Saat ini</span>
+                </td>
+                <td class="text-right">
+                  <button
+                    type="button"
+                    class="btn btn-soft text-xs"
+                    disabled
+                    aria-disabled="true"
+                  >
+                    <span class="btn-label">Perangkat saat ini</span>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  iOS · Auth app
+                  <div class="table-row-subtext">Hanya untuk MFA</div>
+                </td>
+                <td>London, United Kingdom</td>
+                <td>Kemarin · 21.18</td>
+                <td>
+                  <span class="table-tag">Push</span>
+                </td>
+                <td>
+                  <span class="table-tag">Aktif</span>
+                </td>
+                <td class="text-right">
+                  <button
+                    type="button"
+                    class="btn btn-soft text-xs"
+                    data-session-action
+                  >
+                    <span class="btn-label">Akhiri sesi</span>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Windows · Edge
+                  <div class="table-row-subtext">Workstation bersama</div>
+                </td>
+                <td>Frankfurt, Germany</td>
+                <td>2 hari lalu</td>
+                <td>
+                  <span class="table-tag">Password</span>
+                </td>
+                <td>
+                  <span class="table-tag table-tag-danger">Berakhir</span>
+                </td>
+                <td class="text-right">
+                  <button
+                    type="button"
+                    class="btn btn-soft text-xs"
+                    data-session-action
+                  >
+                    <span class="btn-label">Tutup</span>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Android · Chrome
+                  <div class="table-row-subtext">Perangkat pribadi</div>
+                </td>
+                <td>Amsterdam, Netherlands</td>
+                <td>5 hari lalu</td>
+                <td>
+                  <span class="table-tag">MFA · SMS</span>
+                </td>
+                <td>
+                  <span class="table-tag">Aktif</span>
+                </td>
+                <td class="text-right">
+                  <button
+                    type="button"
+                    class="btn btn-soft text-xs"
+                    data-session-action
+                  >
+                    <span class="btn-label">Akhiri sesi</span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="sessions-footer">
+          <span>
+            <span class="legend-dot legend-dot-danger"></span>
+            <span>Aksi di atas hanyalah simulasi untuk menampilkan state loading dan nonaktif.</span>
+          </span>
+          <button type="button" class="btn btn-destructive text-xs" data-session-action>
+            <span class="btn-label">Akhiri semua sesi</span>
+          </button>
+        </div>
+      </section>
+
+      <div class="flow-end">
+        <span>Kembali ke <a href="dashboard.html">dasbor</a> atau atur kebijakan di <a href="security-settings.html">Pengaturan keamanan</a>.</span>
+        <span class="text-muted text-xs">Halaman ini hanya UI. Tidak ada sesi yang benar-benar diubah.</span>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>Pengaturan keamanan | Auth Console</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="app-body">
+  <div class="app-shell">
+    <header class="top-nav" aria-label="Navigasi utama">
+      <div class="top-nav-inner">
+        <div class="top-nav-brand">
+          <div class="top-nav-mark" aria-hidden="true"></div>
+          <div>
+            <div class="top-nav-name">Northwind Identity</div>
+            <div class="top-nav-section-label">Konsol autentikasi</div>
+          </div>
+        </div>
+
+        <nav class="top-nav-links" aria-label="Halaman">
+          <a href="dashboard.html" class="top-nav-link">Dasbor</a>
+          <a href="sessions.html" class="top-nav-link">Sesi</a>
+          <a href="security-settings.html" class="top-nav-link top-nav-link-active">Keamanan</a>
+        </nav>
+
+        <div class="top-nav-user">
+          <div class="avatar">
+            <span>JF</span>
+          </div>
+          <span class="avatar-badge" aria-hidden="true"></span>
+          <div class="top-nav-user-meta">
+            <div class="top-nav-user-name">Jordan Fisher</div>
+            <div class="top-nav-user-role">Admin · Akun contoh</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-shell-main">
+      <header class="section-header">
+        <div>
+          <h1 class="section-title">Pengaturan keamanan</h1>
+          <p class="section-subtitle">
+            Kumpulan kontrol yang terfokus untuk MFA, sesi, dan kebersihan kredensial.
+          </p>
+        </div>
+        <div class="page-actions">
+          <span class="badge badge-success">
+            <span class="badge-dot" aria-hidden="true"></span>
+            <span>Profil aman</span>
+          </span>
+          <button type="button" class="btn btn-soft" onclick="window.location.href='dashboard.html'">
+            <span class="btn-label">Kembali ke dasbor</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="settings-layout" aria-label="Konfigurasi keamanan">
+        <div class="card">
+          <h2 class="settings-section-title">Autentikasi</h2>
+          <p class="settings-section-description">
+            Atur autentikasi multi faktor dan perilaku login untuk akun contoh ini.
+          </p>
+
+          <div class="settings-item" data-toggle data-label-on="Required" data-label-off="Optional">
+            <div class="settings-item-main">
+              <div class="settings-item-title">Wajibkan MFA di perangkat baru</div>
+              <div class="settings-item-description">
+                Memicu MFA setiap ada login dari browser atau alamat IP baru.
+              </div>
+            </div>
+            <div class="stack-tight text-right">
+              <div class="toggle is-on" role="switch" aria-checked="true">
+                <div class="toggle-thumb"></div>
+              </div>
+              <span class="text-xs" data-toggle-status>Wajib</span>
+            </div>
+          </div>
+
+          <div class="settings-item" data-toggle data-label-on="Enabled" data-label-off="Disabled">
+            <div class="settings-item-main">
+              <div class="settings-item-title">Izinkan passkey</div>
+              <div class="settings-item-description">
+                Mengizinkan perangkat yang didukung login menggunakan passkey, bukan kata sandi.
+              </div>
+            </div>
+            <div class="stack-tight text-right">
+              <div class="toggle" role="switch" aria-checked="false">
+                <div class="toggle-thumb"></div>
+              </div>
+              <span class="text-xs" data-toggle-status>Nonaktif</span>
+            </div>
+          </div>
+
+          <div class="settings-item">
+            <div class="settings-item-main">
+              <div class="settings-item-title">Persetujuan perangkat</div>
+              <div class="settings-item-description">
+                Mengharuskan peninjauan admin sebelum perangkat berisiko tinggi dianggap tepercaya.
+              </div>
+            </div>
+            <button type="button" class="btn btn-soft text-xs">
+              <span class="btn-label">Lihat kebijakan</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="card stack-gap-lg">
+          <div>
+            <h2 class="settings-section-title">Kebersihan kata sandi</h2>
+            <p class="settings-section-description">
+              Formulir di bawah ini mensimulasikan alur ganti kata sandi dengan loading dan umpan balik.
+            </p>
+
+            <form
+              class="stack-relaxed"
+              data-loading-form
+              aria-describedby="password-status"
+            >
+              <div class="form-status" id="password-status" aria-live="polite">
+                <div class="alert alert-error is-hidden" data-alert="error">
+                  <span class="alert-label">Gagal memperbarui</span>
+                  <span class="alert-message">Contoh pesan galat muncul di sini sebagai referensi.</span>
+                </div>
+                <div class="alert alert-success is-hidden" data-alert="success">
+                  <span class="alert-label">Kata sandi diperbarui</span>
+                  <span class="alert-message">Gunakan ini untuk menampilkan state pembaruan yang berhasil.</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="current-password">
+                  Kata sandi saat ini
+                </label>
+                <input
+                  class="form-control"
+                  id="current-password"
+                  type="password"
+                  autocomplete="current-password"
+                  placeholder="Masukkan kata sandi saat ini"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="new-password">
+                  Kata sandi baru
+                </label>
+                <input
+                  class="form-control"
+                  id="new-password"
+                  type="password"
+                  autocomplete="new-password"
+                  placeholder="Buat kata sandi baru"
+                  required
+                >
+                <p class="form-hint">Hanya untuk tampilan. Tidak ada perubahan yang disimpan atau dikirim.</p>
+              </div>
+
+              <div class="form-row-inline">
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  data-loading-button
+                >
+                  <span class="btn-label">Perbarui kata sandi</span>
+                </button>
+                <button type="button" class="btn btn-ghost">
+                  <span class="btn-label">Batalkan</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div>
+            <h2 class="settings-section-title">Kontrol sesi</h2>
+            <p class="settings-section-description">
+              Gabungkan elemen UI ini dengan aturan backend untuk membangun pusat keamanan yang lengkap.
+            </p>
+
+            <div class="stack-relaxed">
+              <div class="stack-tight">
+                <span class="definition-item-label">Rekomendasi standar</span>
+                <div class="pill-list">
+                  <span class="pill">Batasi masa aktif sesi</span>
+                  <span class="pill">Tinjau perangkat berisiko tinggi setiap hari</span>
+                  <span class="pill">Wajibkan MFA untuk peran admin</span>
+                </div>
+              </div>
+              <button
+                type="button"
+                class="btn btn-destructive text-xs"
+                data-session-action
+              >
+                <span class="btn-label">Akhiri semua sesi</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="flow-end">
+        <span>Jelajahi <a href="sessions.html">Sesi</a> untuk melihat bagaimana pengaturan ini muncul dalam konteks.</span>
+        <span class="text-muted text-xs">Halaman ini sepenuhnya front-end saja untuk keperluan portofolio.</span>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

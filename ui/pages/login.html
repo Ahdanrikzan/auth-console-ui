@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>Masuk | Auth Console</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="auth-body">
+  <main class="auth-layout" aria-label="Masuk ke Auth Console">
+    <section class="auth-panel">
+      <header class="auth-panel-header">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true"></div>
+          <span class="brand-name">Northwind Identity</span>
+        </div>
+        <div class="auth-heading">
+          <h1 class="auth-heading-title">Selamat datang kembali</h1>
+          <p class="auth-heading-subtitle">Masuk untuk meninjau aktivitas keamanan dan sesi yang aktif.</p>
+        </div>
+        <p class="auth-meta">Antarmuka autentikasi kelas enterprise, dirancang untuk produk fintech dan berfokus pada keamanan.</p>
+      </header>
+
+      <form class="auth-form" data-loading-form aria-describedby="login-status">
+        <div class="form-status" id="login-status" aria-live="polite">
+          <div class="alert alert-info">
+            <span class="alert-label">Tips keamanan</span>
+            <span class="alert-message">Gunakan passkey atau MFA kapan pun memungkinkan.</span>
+          </div>
+          <div class="alert alert-error is-hidden" data-alert="error">
+            <span class="alert-label">Periksa kembali data</span>
+            <span class="alert-message">Kredensial ini tidak cocok. Ini adalah contoh tampilan galat saja.</span>
+          </div>
+          <div class="alert alert-success is-hidden" data-alert="success">
+            <span class="alert-label">Berhasil masuk</span>
+            <span class="alert-message">Anda sudah masuk. Ini adalah contoh tampilan sukses saja.</span>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="email">
+              Email kerja
+            </label>
+            <input
+              class="form-control"
+              id="email"
+              name="email"
+              type="email"
+              inputmode="email"
+              autocomplete="email"
+              placeholder="name@company.com"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <div class="form-row-inline">
+              <label class="form-label" for="password">
+                Kata sandi
+              </label>
+              <a href="#" class="link-muted">Lupa?</a>
+            </div>
+            <input
+              class="form-control"
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              placeholder="Masukkan kata sandi"
+              required
+            >
+          </div>
+
+          <div class="form-row-inline">
+            <label class="checkbox">
+              <input type="checkbox" name="remember" checked>
+              <span>Biarkan saya tetap masuk di perangkat ini</span>
+            </label>
+            <span class="chip">Login terakhir: 2 jam lalu</span>
+          </div>
+
+          <div class="form-row-inline">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              data-loading-button
+            >
+              <span class="btn-label">Masuk</span>
+            </button>
+            <button type="button" class="btn btn-ghost" onclick="window.location.href='register.html'">
+              <span class="btn-label">Buat akun</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="auth-links">
+          <span class="text-muted text-sm">Lebih suka pakai kode?</span>
+          <div class="page-link-group">
+            <a href="mfa.html">Gunakan kode keamanan</a>
+          </div>
+        </div>
+
+        <footer class="auth-footer">
+          <span>Dengan melanjutkan, Anda menyadari bahwa ini adalah prototipe front-end saja.</span>
+          <span>Mencari dashboard? <a href="dashboard.html">Buka tampilan contoh</a></span>
+        </footer>
+      </form>
+    </section>
+
+    <aside class="auth-aside" aria-label="Ringkasan keamanan">
+      <header class="auth-aside-header">
+        <div>
+          <div class="auth-aside-tag">Profil keamanan</div>
+          <h2 class="auth-aside-title">Dirancang untuk lingkungan berkepercayaan tinggi</h2>
+        </div>
+      </header>
+
+      <div>
+        <p class="auth-aside-body">
+          Antarmuka ini berfokus pada kejelasan, interaksi yang dapat diprediksi, dan penggunaan warna yang terkendali sehingga terasa cocok untuk produk finansial, keamanan, dan enterprise.
+        </p>
+
+        <div class="auth-aside-metrics">
+          <div class="metric">
+            <div class="metric-label">Visibilitas sesi</div>
+            <div class="metric-value">Penuh</div>
+            <div class="metric-caption">Perangkat, lokasi, dan aktivitas terakhir secara default.</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Cakupan MFA</div>
+            <div class="metric-value">Kuat</div>
+            <div class="metric-caption">Mendukung SMS, aplikasi, dan kunci keamanan.</div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="auth-aside-footer">
+        <div>Lihat pratinjau pengalaman setelah login lewat tautan <strong>dashboard contoh</strong> di sebelah kiri.</div>
+      </footer>
+    </aside>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

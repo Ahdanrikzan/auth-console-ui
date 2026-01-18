@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>Verifikasi kode | Auth Console</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="auth-body">
+  <main class="auth-layout" aria-label="Autentikasi multi faktor">
+    <section class="auth-panel">
+      <header class="auth-panel-header">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true"></div>
+          <span class="brand-name">Northwind Identity</span>
+        </div>
+        <div class="auth-heading">
+          <h1 class="auth-heading-title">Verifikasi bahwa ini benar-benar Anda</h1>
+          <p class="auth-heading-subtitle">Masukkan kode 6 digit dari metode autentikasi Anda.</p>
+        </div>
+        <p class="auth-meta">Tampilan ini hanya mendemonstrasikan visual MFA. Tidak ada kode yang divalidasi atau dikirim.</p>
+      </header>
+
+      <form class="auth-form" data-loading-form aria-describedby="mfa-status">
+        <div class="form-status" id="mfa-status" aria-live="polite">
+          <div class="alert alert-error is-hidden" data-alert="error">
+            <span class="alert-label">Kode kedaluwarsa</span>
+            <span class="alert-message">Ini adalah contoh galat. Gunakan untuk menampilkan gaya error.</span>
+          </div>
+          <div class="alert alert-success is-hidden" data-alert="success">
+            <span class="alert-label">Terverifikasi</span>
+            <span class="alert-message">MFA selesai dengan sukses. Ini adalah contoh tampilan sukses saja.</span>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="mfa-code">
+              Kode 6 digit
+              <span>(simulasi)</span>
+            </label>
+            <input
+              class="form-control mfa-code-input"
+              id="mfa-code"
+              name="code"
+              type="text"
+              inputmode="numeric"
+              autocomplete="one-time-code"
+              placeholder="123 456"
+              maxlength="6"
+              required
+            >
+            <p class="form-hint">Input apa pun akan diterima di prototipe ini. Tidak ada validasi.</p>
+          </div>
+
+          <div class="form-group">
+            <div class="mfa-options">
+              <span>Dikirim ke: <strong>Aplikasi authenticator</strong></span>
+              <span>Cadangan: kunci keamanan atau SMS</span>
+            </div>
+          </div>
+
+          <div class="form-row-inline">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              data-loading-button
+            >
+              <span class="btn-label">Verifikasi dan lanjutkan</span>
+            </button>
+            <button
+              type="button"
+              class="btn btn-ghost"
+              onclick="window.location.href='login.html'"
+            >
+              <span class="btn-label">Kembali ke halaman masuk</span>
+            </button>
+          </div>
+
+          <div class="form-row-inline mfa-resend">
+            <span class="kbd">MFA</span>
+            <span data-countdown-seconds="28">Kirim ulang kode dalam 28 dtk</span>
+            <button
+              type="button"
+              class="btn btn-link text-xs"
+              data-resend
+              disabled
+            >
+              <span class="btn-label">Kirim ulang kode</span>
+            </button>
+          </div>
+        </div>
+
+        <footer class="auth-footer">
+          <span>Setelah verifikasi, lanjutkan ke dashboard untuk meninjau aktivitas terbaru.</span>
+          <span>Lewati langsung ke <a href="dashboard.html">Dashboard</a></span>
+        </footer>
+      </form>
+    </section>
+
+    <aside class="auth-aside" aria-label="Ringkasan autentikasi multi faktor">
+      <header class="auth-aside-header">
+        <div>
+          <div class="auth-aside-tag">MFA</div>
+          <h2 class="auth-aside-title">Verifikasi kuat, UX yang jelas</h2>
+        </div>
+      </header>
+
+      <div>
+        <p class="auth-aside-body">
+          Tampilan MFA menggunakan satu input terpusat dan gaya yang netral agar pengguna memahami apa yang perlu dilakukan tanpa distraksi.
+        </p>
+
+        <div class="auth-aside-metrics">
+          <div class="metric">
+            <div class="metric-label">Metode</div>
+            <div class="metric-value">3</div>
+            <div class="metric-caption">Aplikasi authenticator, SMS, dan kunci keamanan.</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Sinyal status</div>
+            <div class="metric-value">Jelas</div>
+            <div class="metric-caption">Keadaan sukses dan error terlihat sangat berbeda.</div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="auth-aside-footer">
+        <div>Gabungkan dengan halaman <strong>Sesi</strong> dan <strong>Pengaturan keamanan</strong> untuk membangun cerita keamanan yang utuh.</div>
+      </footer>
+    </aside>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

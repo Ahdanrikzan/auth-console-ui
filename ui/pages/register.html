@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>Buat akun | Auth Console</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="auth-body">
+  <main class="auth-layout" aria-label="Membuat akun di Auth Console">
+    <section class="auth-panel">
+      <header class="auth-panel-header">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true"></div>
+          <span class="brand-name">Northwind Identity</span>
+        </div>
+        <div class="auth-heading">
+          <h1 class="auth-heading-title">Buat akun workspace Anda</h1>
+          <p class="auth-heading-subtitle">Akses khusus undangan untuk tim dan akun layanan Anda.</p>
+        </div>
+        <p class="auth-meta">Semua isian hanya untuk demonstrasi. Tidak ada informasi yang dikirim keluar browser.</p>
+      </header>
+
+      <form class="auth-form" data-loading-form aria-describedby="register-status">
+        <div class="form-status" id="register-status" aria-live="polite">
+          <div class="alert alert-error is-hidden" data-alert="error">
+            <span class="alert-label">Terjadi masalah</span>
+            <span class="alert-message">Contoh pesan galat validasi ditampilkan di sini sebagai referensi visual.</span>
+          </div>
+          <div class="alert alert-success is-hidden" data-alert="success">
+            <span class="alert-label">Akun dibuat</span>
+            <span class="alert-message">Anda siap untuk masuk. Ini adalah contoh tampilan sukses saja.</span>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="full-name">
+              Nama lengkap
+            </label>
+            <input
+              class="form-control"
+              id="full-name"
+              name="full-name"
+              type="text"
+              autocomplete="name"
+              placeholder="Jordan Fisher"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="company">
+              Perusahaan
+            </label>
+            <input
+              class="form-control"
+              id="company"
+              name="company"
+              type="text"
+              autocomplete="organization"
+              placeholder="Northwind Capital"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="register-email">
+              Email kerja
+            </label>
+            <input
+              class="form-control"
+              id="register-email"
+              name="email"
+              type="email"
+              inputmode="email"
+              autocomplete="email"
+              placeholder="name@company.com"
+              required
+            >
+            <p class="form-hint">Anda dapat menggunakan email bersama atau distribution list untuk akses tim.</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="register-password">
+              Kata sandi
+            </label>
+            <input
+              class="form-control"
+              id="register-password"
+              name="password"
+              type="password"
+              autocomplete="new-password"
+              placeholder="Buat kata sandi yang kuat"
+              required
+            >
+            <p class="form-hint">Gunakan minimal 12 karakter. Ini hanya panduan visual.</p>
+          </div>
+
+          <div class="form-row-inline">
+            <label class="checkbox">
+              <input type="checkbox" name="terms" required>
+              <span>Saya memahami bahwa ini adalah prototipe autentikasi yang hanya berisi UI.</span>
+            </label>
+          </div>
+
+          <div class="form-row-inline">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              data-loading-button
+            >
+              <span class="btn-label">Buat akun</span>
+            </button>
+            <button type="button" class="btn btn-ghost" onclick="window.location.href='login.html'">
+              <span class="btn-label">Kembali ke halaman masuk</span>
+            </button>
+          </div>
+        </div>
+
+        <footer class="auth-footer">
+          <span>Setelah membuat akun, lanjutkan ke pengalaman dashboard contoh.</span>
+          <span>Lewati langsung ke <a href="dashboard.html">Dashboard</a></span>
+        </footer>
+      </form>
+    </section>
+
+    <aside class="auth-aside" aria-label="Ringkasan onboarding">
+      <header class="auth-aside-header">
+        <div>
+          <div class="auth-aside-tag">Onboarding</div>
+          <h2 class="auth-aside-title">Siap dipakai dalam beberapa langkah yang jelas</h2>
+        </div>
+      </header>
+
+      <div>
+        <p class="auth-aside-body">
+          Pengalaman pendaftaran ini dirancang untuk tim yang mengutamakan kejelasan dibanding dekorasi, dengan tata letak yang nyaman untuk admin maupun pengguna akhir.
+        </p>
+
+        <div class="auth-aside-metrics">
+          <div class="metric">
+            <div class="metric-label">Perkiraan waktu</div>
+            <div class="metric-value">2 min</div>
+            <div class="metric-caption">Dari daftar akun hingga melihat dashboard contoh pertama kali.</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Kelengkapan profil</div>
+            <div class="metric-value">80%</div>
+            <div class="metric-caption">Dikuatkan lagi dengan MFA dan peninjauan sesi di tahap berikutnya.</div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="auth-aside-footer">
+        <div>Lanjutkan ke halaman <strong>MFA</strong> dan <strong>Pengaturan keamanan</strong> untuk menampilkan alur lengkap.</div>
+      </footer>
+    </aside>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>Dasbor | Auth Console</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="app-body">
+  <div class="app-shell">
+    <header class="top-nav" aria-label="Navigasi utama">
+      <div class="top-nav-inner">
+        <div class="top-nav-brand">
+          <div class="top-nav-mark" aria-hidden="true"></div>
+          <div>
+            <div class="top-nav-name">Northwind Identity</div>
+            <div class="top-nav-section-label">Konsol autentikasi</div>
+          </div>
+        </div>
+
+        <nav class="top-nav-links" aria-label="Halaman">
+          <a href="dashboard.html" class="top-nav-link top-nav-link-active">Dasbor</a>
+          <a href="sessions.html" class="top-nav-link">Sesi</a>
+          <a href="security-settings.html" class="top-nav-link">Keamanan</a>
+        </nav>
+
+        <div class="top-nav-user">
+          <div class="avatar">
+            <span>JF</span>
+          </div>
+          <span class="avatar-badge" aria-hidden="true"></span>
+          <div class="top-nav-user-meta">
+            <div class="top-nav-user-name">Jordan Fisher</div>
+            <div class="top-nav-user-role">Admin · Akun contoh</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-shell-main">
+      <header class="section-header">
+        <div>
+          <h1 class="section-title">Ringkasan akun</h1>
+          <p class="section-subtitle">
+            Tampilan ringkas login terakhir, sesi aktif, dan status MFA Anda.
+          </p>
+        </div>
+        <div class="page-actions">
+          <span class="badge badge-success">
+            <span class="badge-dot" aria-hidden="true"></span>
+            <span>MFA aktif</span>
+          </span>
+          <span class="badge badge-neutral">
+            <span class="badge-dot" aria-hidden="true"></span>
+            <span>Demo hanya-baca</span>
+          </span>
+          <button class="btn btn-soft" type="button" onclick="window.location.href='security-settings.html'">
+            <span class="btn-label">Tinjau pengaturan keamanan</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="card-grid" aria-label="Ringkasan keamanan">
+        <article class="card" aria-labelledby="last-login-heading">
+          <header class="card-header">
+            <div>
+              <h2 class="card-title" id="last-login-heading">Login terakhir</h2>
+              <p class="card-subtitle">Detail dari peristiwa autentikasi terakhir Anda.</p>
+            </div>
+            <span class="status-pill">
+              <span class="status-pill-dot" aria-hidden="true"></span>
+              <span>Healthy</span>
+            </span>
+          </header>
+          <div class="card-body">
+            <dl class="definition-list">
+              <div>
+                <dt class="definition-item-label">Waktu</dt>
+                <dd class="definition-item-value">Hari ini · 09.24</dd>
+              </div>
+              <div>
+                <dt class="definition-item-label">Lokasi</dt>
+                <dd class="definition-item-value">London, United Kingdom</dd>
+              </div>
+              <div>
+                <dt class="definition-item-label">Perangkat</dt>
+                <dd class="definition-item-value">MacOS · Safari 18</dd>
+              </div>
+              <div>
+                <dt class="definition-item-label">MFA</dt>
+                <dd class="definition-item-value">Aplikasi authenticator · Terverifikasi</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="card" aria-labelledby="security-status-heading">
+          <header class="card-header">
+            <div>
+              <h2 class="card-title" id="security-status-heading">Status keamanan</h2>
+              <p class="card-subtitle">Konfigurasi tingkat tinggi untuk akun contoh ini.</p>
+            </div>
+          </header>
+          <div class="card-body stack">
+            <div class="stack-tight">
+              <span class="definition-item-label">Konfigurasi MFA</span>
+              <span class="definition-item-value">Wajib untuk setiap login dari perangkat baru.</span>
+            </div>
+            <div class="stack-tight">
+              <span class="definition-item-label">Passkey</span>
+              <span class="definition-item-value">Tersedia · Belum diaktifkan</span>
+            </div>
+            <div class="stack-tight">
+              <span class="definition-item-label">Sinyal risiko</span>
+              <span class="definition-item-value">Tidak ada aktivitas tidak biasa dalam 30 hari terakhir.</span>
+            </div>
+            <div class="divider"></div>
+            <div class="stack-tight">
+              <span class="definition-item-label">Tautan cepat</span>
+              <div class="pill-list">
+                <button type="button" class="pill pill-strong" onclick="window.location.href='sessions.html'">Tinjau sesi</button>
+                <button type="button" class="pill" onclick="window.location.href='security-settings.html'">Perbarui MFA</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="card-grid-full" aria-label="Sesi dan aktivitas">
+        <article class="card" aria-labelledby="sessions-heading">
+          <header class="card-header">
+            <div>
+              <h2 class="card-title" id="sessions-heading">Sesi aktif</h2>
+              <p class="card-subtitle">Perangkat yang sedang masuk untuk akun contoh ini.</p>
+            </div>
+            <button type="button" class="btn btn-soft" onclick="window.location.href='sessions.html'">
+              <span class="btn-label">Kelola sesi</span>
+            </button>
+          </header>
+          <div class="card-body table-scroll">
+            <table class="table" aria-label="Sesi aktif">
+              <thead>
+                <tr>
+                  <th scope="col">Perangkat</th>
+                  <th scope="col">Lokasi</th>
+                  <th scope="col">Terakhir aktif</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    MacOS · Safari
+                    <div class="table-row-subtext">Browser ini</div>
+                  </td>
+                  <td>
+                    London, United Kingdom
+                    <div class="table-row-subtext">Perkiraan lokasi</div>
+                  </td>
+                  <td>Sekarang</td>
+                  <td>
+                    <span class="table-tag table-tag-strong">Aktif</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    iOS · Auth app
+                    <div class="table-row-subtext">Terakhir digunakan untuk MFA</div>
+                  </td>
+                  <td>London, United Kingdom</td>
+                  <td>Kemarin · 21.18</td>
+                  <td>
+                    <span class="table-tag">Diam</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="card" aria-labelledby="activity-heading">
+          <header class="card-header">
+            <div>
+              <h2 class="card-title" id="activity-heading">Aktivitas terbaru</h2>
+              <p class="card-subtitle">Peristiwa contoh untuk menampilkan garis waktu keamanan.</p>
+            </div>
+          </header>
+          <div class="card-body stack-relaxed">
+            <div class="stack-tight">
+              <div class="status-pill">
+                <span class="status-pill-dot" aria-hidden="true"></span>
+                <span>Login</span>
+              </div>
+              <div class="definition-item-value">Login berhasil dari MacOS · Safari</div>
+              <div class="definition-item-label">Hari ini · 09.24 · London, United Kingdom</div>
+            </div>
+            <div class="stack-tight">
+              <div class="status-pill">
+                <span class="status-pill-dot status-pill-dot-warning" aria-hidden="true"></span>
+                <span>Tantangan MFA</span>
+              </div>
+              <div class="definition-item-value">Verifikasi tambahan diminta setelah perubahan IP.</div>
+              <div class="definition-item-label">Kemarin · 21.18 · Aplikasi authenticator</div>
+            </div>
+            <div class="stack-tight">
+              <div class="status-pill">
+                <span class="status-pill-dot status-pill-dot-warning" aria-hidden="true"></span>
+                <span>Tinjauan sesi</span>
+              </div>
+              <div class="definition-item-value">Pengguna mengakhiri 1 sesi dari halaman sesi.</div>
+              <div class="definition-item-label">Ini adalah peristiwa contoh untuk tata letak saja.</div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <div class="flow-end">
+        <span>Lanjutkan perjalanan di <a href="sessions.html">Sesi</a> atau <a href="security-settings.html">Pengaturan keamanan</a>.</span>
+        <span class="text-muted text-xs">Semua data bersifat statis dan hanya untuk presentasi.</span>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
